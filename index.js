@@ -6,8 +6,7 @@ app.use(cors());
 
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
-
-require("dotenv").config();
+ 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
